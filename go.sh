@@ -2,7 +2,7 @@
 #http://blog.bmannconsulting.com/mavericks-brew-cask
 #https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 # homebrew
-## Xcode required - https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Installation.md#requirements
+## Xcode required - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Installation.md#requirements
 xcode-select --install
 
 ###############################################################################
