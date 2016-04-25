@@ -17,6 +17,7 @@ brew tap caskroom/versions
 ###############################################################################
 brew cask install google-chrome
 brew cask install vlc
+brew cask install libreoffice
 
 ###############################################################################
 # Sysadmin                                                                    #
@@ -51,18 +52,18 @@ brew install node
 npm install -g gulp
 npm install -g bower
 
-brew cask install intellij-idea
 brew cask install notational-velocity
 brew cask install textwrangler
 brew cask install slack
-brew cask install visualvm
-brew cask install ecreenhero
+brew cask install screenhero
 brew cask install git
 brew cask install github-desktop
 brew cask install java
-brew cask install yourkit-java-profiler
+#brew cask install yourkit-java-profiler
 brew cask install dbvisualizer
 brew cask install jce-unlimited-strength-policy
+brew cask install visualvm
+brew cask install intellij-idea
 
 
 ###############################################################################
@@ -79,7 +80,7 @@ brew cask install sigil
 #brew cask install lastpass use browser extension not working
 #brew tap trinitronx/homebrew-truecrypt using integrated mac encryption
 echo "Administrator password required to enable FileVault"
-#sudo fdesetup enable
+sudo fdesetup enable
 
 ###############################################################################
 # Sublime Text                                                                #
