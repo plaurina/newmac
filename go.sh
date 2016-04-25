@@ -21,34 +21,56 @@ brew cask install vlc
 ###############################################################################
 # Sysadmin                                                                    #
 ###############################################################################
-# brew cask install iterm2
-# brew cask install alfred
+brew cask install iterm2
+brew cask install alfred
 # softwareupdate --install 'RemoteDesktopClient-3.8.2 v1.1'
+brew cask install atext
+brew cask install spectacle
+brew cask install google-drive
+brew cask install clipmenu
+brew cask install coconutbattery
+brew cask install mysql-utilities
 
 ###############################################################################
 # Development                                                                 #
 ###############################################################################
-brew cask install sublime-text3
+#brew cask install sublime-text3
 brew cask install virtualbox
-brew cask install vagrant
+#brew cask install vagrant
 #brew cask install googleappengine
 #brew install mcrypt #required for laravel
 #brew install php56-mcrypt #required for laravel
 #vagrant plugin install vagrant-bindfs
 #vagrant plugin install vagrant-hostsupdater
-brew cask install sourcetree
-brew cask install sequel-pro
-brew install homebrew/php/composer
-#brew install android-platform-tools
+#brew cask install sourcetree
+#brew cask install sequel-pro
+#brew install homebrew/php/composer
+brew install android-platform-tools
 #brew install ansible
-#brew install node
-#npm install -g gulp
-#npm install -g bower
+brew install node
+npm install -g gulp
+npm install -g bower
+
+brew cask install intellij-idea
+brew cask install notational-velocity
+brew cask install textwrangler
+brew cask install slack
+brew cask install visualvm
+brew cask install ecreenhero
+brew cask install git
+brew cask install github-desktop
+brew cask install java
+brew cask install yourkit-java-profiler
+brew cask install dbvisualizer
+brew cask install jce-unlimited-strength-policy
+
 
 ###############################################################################
 # Design                                                                      #
 ###############################################################################
-brew cask install adobe-photoshop-cc
+#brew cask install adobe-photoshop-cc
+brew cask install gimp
+brew cask install sigil
 
 ###############################################################################
 # Security                                                                    #
@@ -57,7 +79,7 @@ brew cask install adobe-photoshop-cc
 #brew cask install lastpass use browser extension not working
 #brew tap trinitronx/homebrew-truecrypt using integrated mac encryption
 echo "Administrator password required to enable FileVault"
-sudo fdesetup enable
+#sudo fdesetup enable
 
 ###############################################################################
 # Sublime Text                                                                #
@@ -138,7 +160,7 @@ defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Finder: show hidden files by default
-#defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -157,7 +179,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Use column view in all Finder windows by default
 # Four-letter codes for the view modes: `icnv` = icon, `clmv` = column, `Flwv` = coverflow, `Nlsv` = list
-defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Show items in finder sidebar
 defaults write com.apple.sidebarlists systemitems -dict-add ShowEjectables -bool true
@@ -170,7 +192,7 @@ defaults write com.apple.sidebarlists systemitems -dict-add ShowServers -bool tr
 ###############################################################################
 
 # Minimize windows into their application’s icon
-#defaults write com.apple.dock minimize-to-application -bool true
+defaults write com.apple.dock minimize-to-application -bool true
 
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
