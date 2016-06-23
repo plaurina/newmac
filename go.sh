@@ -31,6 +31,8 @@ brew cask install google-drive
 brew cask install clipmenu
 brew cask install coconutbattery
 brew cask install mysql-utilities
+brew cask install keka
+brew cask install flux
 
 ###############################################################################
 # Development                                                                 #
