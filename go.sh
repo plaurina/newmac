@@ -1,44 +1,51 @@
 #!/bin/sh
+echo "###############################################################################"
+echo "# Go.sh Mac Setup                                                             #"
+echo "###############################################################################"
+echo change default shell back to bash instead of zsh
+chsh -s /bin/bash
+
 #http://blog.bmannconsulting.com/mavericks-brew-cask
 #https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 # homebrew
 ## Xcode required - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Installation.md#requirements
 xcode-select --install
 
-###############################################################################
-# Homebrew + Cask                                                             #
-###############################################################################
+echo "###############################################################################"
+echo "# Homebrew + Cask                                                             #"
+echo "###############################################################################"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
-###############################################################################
-# Common                                                                      #
-###############################################################################
+echo "###############################################################################"
+echo "# Common                                                                      #"
+echo "###############################################################################"
 brew cask install google-chrome
 brew cask install vlc
-brew cask install libreoffice
+brew cask install openoffice
 
-###############################################################################
-# Sysadmin                                                                    #
-###############################################################################
+echo "###############################################################################"
+echo "# Sysadmin                                                                    #"
+echo "###############################################################################"
 brew cask install iterm2
 brew cask install alfred
 # softwareupdate --install 'RemoteDesktopClient-3.8.2 v1.1'
 brew cask install atext
 brew cask install spectacle
-brew cask install google-drive
-brew cask install clipmenu
-brew cask install coconutbattery
-brew cask install mysql-utilities
-brew cask install keka
-brew cask install flux
+brew cask install google-backup-and-sync 
 
-###############################################################################
-# Development                                                                 #
-###############################################################################
+brew cask install clipy
+brew cask install coconutbattery
+brew cask install mysql
+brew cask install keka
+#brew cask install flux
+
+echo "###############################################################################"
+echo "# Development                                                                 #"
+echo "###############################################################################"
 #brew cask install sublime-text3
-brew cask install virtualbox
+#brew cask install virtualbox
 #brew cask install vagrant
 #brew cask install googleappengine
 #brew install mcrypt #required for laravel
@@ -51,63 +58,73 @@ brew cask install virtualbox
 brew install android-platform-tools
 #brew install ansible
 brew install node
+brew install nvm
 npm install -g gulp
 npm install -g bower
+brew cask install docker
+brew cask install kitematic
 
 brew cask install notational-velocity
-brew cask install textwrangler
+#brew cask install textwrangler
 brew cask install slack
-brew cask install screenhero
-brew cask install git
-brew cask install github-desktop
-brew cask install java
+#brew cask install screenhero
+brew install git
+#brew cask install github-desktop
+brew install htop
+
+brew install java11
+brew install java6
+brew install jenv
+brew install maven
+brew install gradle
+
 #brew cask install yourkit-java-profiler
 brew cask install dbvisualizer
-brew cask install jce-unlimited-strength-policy
+brew install jce-unlimited-strength-policy
 brew cask install visualvm
 brew cask install intellij-idea
 
 
-###############################################################################
-# Design                                                                      #
-###############################################################################
+echo "###############################################################################"
+echo "# Design                                                                      #"
+echo "###############################################################################"
 #brew cask install adobe-photoshop-cc
 brew cask install gimp
-brew cask install sigil
+#brew cask install sigil
 
-###############################################################################
-# Security                                                                    #
-###############################################################################
+echo "###############################################################################"
+echo "# Security                                                                    #"
+echo "###############################################################################"
 #brew cask install private-internet-access  not working
 #brew cask install lastpass use browser extension not working
 #brew tap trinitronx/homebrew-truecrypt using integrated mac encryption
 echo "Administrator password required to enable FileVault"
 sudo fdesetup enable
 
-###############################################################################
-# Sublime Text                                                                #
-###############################################################################
+#echo "###############################################################################"
+#echo "# Sublime Text                                                                #"
+#echo "###############################################################################"
 #https://www.sublimetext.com/forum/viewtopic.php?f=6&t=21024
 #http://sublime-text-unofficial-documentation.readthedocs.org/en/latest/reference/commands.html
 # /opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3083/Sublime\ Text.app/Contents/SharedSupport/bin/subl --command "show_panel {\"panel\": \"console\"}"
 # /opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3083/Sublime\ Text.app/Contents/SharedSupport/bin/subl --command "insert_snippet {\"contents\" : \"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)\"}"
 # /opt/homebrew-cask/Caskroom/sublime-text3/Build\ 3083/Sublime\ Text.app/Contents/SharedSupport/bin/subl --command build
 
-###############################################################################
-# Cleanup                                                                     #
-###############################################################################
-brew cleanup
-brew cask cleanup
+echo "###############################################################################"
+echo "# Cleanup                                                                     #"
+echo "###############################################################################"
+#brew cleanup
+#brew cask cleanup
 
-###############################################################################
-# General UI/UX                                                               #
-###############################################################################
+echo "###############################################################################"
+echo "# General UI/UX                                                               #"
+echo "###############################################################################"
 
 # Set computer name (as done via System Preferences → Sharing)
-#sudo scutil --set ComputerName "0x6D746873"
-#sudo scutil --set HostName "0x6D746873"
-#sudo scutil --set LocalHostName "0x6D746873"
-#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
+sudo scutil --set ComputerName "LM13P"
+sudo scutil --set HostName "LM13P"
+sudo scutil --set LocalHostName LM13P"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "LM13P"
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -127,9 +144,9 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
 
-###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-###############################################################################
+echo "###############################################################################"
+echo "# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #"
+echo "###############################################################################"
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -140,9 +157,9 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-###############################################################################
-# Screen                                                                      #
-###############################################################################
+echo "###############################################################################"
+echo "# Screen                                                                      #"
+echo "###############################################################################"
 
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
@@ -153,9 +170,9 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
-###############################################################################
-# Finder                                                                      #
-###############################################################################
+echo "###############################################################################"
+echo "# Finder                                                                      #"
+echo "###############################################################################"
 
 # Set the default `PfDe` location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
@@ -190,9 +207,9 @@ defaults write com.apple.sidebarlists systemitems -dict-add ShowHardDisks -bool 
 defaults write com.apple.sidebarlists systemitems -dict-add ShowRemovable -bool true
 defaults write com.apple.sidebarlists systemitems -dict-add ShowServers -bool true
 
-###############################################################################
-# Dock, Dashboard, and hot corners                                            #
-###############################################################################
+echo "###############################################################################"
+echo "# Dock, Dashboard, and hot corners                                            #"
+echo "###############################################################################"
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
@@ -214,9 +231,9 @@ defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 # Reset Launchpad, but keep the desktop wallpaper intact
 find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
-###############################################################################
-# Time Machine                                                                #
-###############################################################################
+echo "###############################################################################"
+echo "# Time Machine                                                                #"
+echo "###############################################################################"
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
@@ -226,8 +243,18 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 
 
-#non cli apps
+
+echo "###############################################################################"
+echo "# Non CLI Apps                                                                #"
+echo "###############################################################################"
+curl -o https://awscli.amazonaws.com/AWSCLIV2.pkg
+open AWSCLIV2.pkg
+
+
+
+
+
 open /Applications/App\ Store.app
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-say -v Good "I'm all done setting up your computer"
+say -v Fiona "I'm all done setting up your computer"
