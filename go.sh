@@ -63,6 +63,7 @@ npm install -g gulp
 npm install -g bower
 brew cask install docker
 brew cask install kitematic
+brew cask install postman
 
 brew cask install notational-velocity
 #brew cask install textwrangler
